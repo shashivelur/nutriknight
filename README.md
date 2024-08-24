@@ -2,6 +2,7 @@
 
 ## Setup SSH keys (on Mac or Windows)
 Follow these instructions: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+  - Make sure you use your email address that is tied to the Github account
   - Just hit `Enter` for all prompts to use the defaults.
   - Don't use any passphrase. Press Enter when prompted for passphrase.
   - When setting up your ssh config (in `~/.ssh/config`), omit/remove the "UseKeychain" line
