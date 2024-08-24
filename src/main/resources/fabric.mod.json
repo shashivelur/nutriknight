@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "nutriknight",
+  "version": "${version}",
+  "name": "nutriknight",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/nutriknight/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.nk.client.NutriknightClient"
+    ],
+    "main": [
+      "org.nk.Nutriknight"
+    ]
+  },
+  "mixins": [
+    "nutriknight.mixins.json",
+    {
+      "config": "nutriknight.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
