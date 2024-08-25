@@ -27,7 +27,14 @@ Follow these instructions: https://docs.github.com/en/authentication/connecting-
   - Look at the existing pattern for Boba tea under `src/main/java` and follow the same
   - Create your own packages/folders (like `drinkworld`) under `src/main/java/org/nk/` and add your java files there
 
-## Nutriknight Minecraft Project specifics
+## To create a new 16x16 pixel texture
+  - Go to [https://www.pixilart.com](https://www.pixilart.com) and click on "New Drawing"
+  - Go to `File` > `Resize Canvas` > Set Canvas size to 16x16 (`width` = 16 and `length` = 16)
+  - Create your texture masterpiece by using pixels with different colors that represents your texture
+  - After you're done, go to `File` > `Export/Download` > Download PNG
+  - Rename the file in your `Downloads` folder to the same name as your item and copy it to your `~/Projects/nutrinight/src/main/resources/assets/nutriknight/textures/item/` folder
+
+## Reference : Nutriknight Minecraft Project specifics
 ModId: `nutriknight`
 Root Package name: `org.nk.Nutriknight`
 Minecraft version: `1.21.1`
