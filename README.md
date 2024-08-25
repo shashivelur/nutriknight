@@ -2,6 +2,7 @@
 
 ## Project Documents
   - [Ideas in Google Sheets](https://docs.google.com/spreadsheets/d/1JL2lT3-iV1pcSHnnSn6LNvD-OqF8wrZmOC1o8gGfeYQ/edit?gid=0#gid=0)
+  - [Game Mechanics in Milanote](https://app.milanote.com/1RVGPm1Mskdo6A/mechanics) 
 
 ## Setup SSH keys (on Mac or Windows)
 Follow these instructions: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
