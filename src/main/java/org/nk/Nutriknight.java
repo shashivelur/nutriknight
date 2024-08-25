@@ -9,9 +9,9 @@ public class Nutriknight implements ModInitializer {
     public void onInitialize() {
         NKBlocksAndItems.createAndRegisterBobaTeaItem();
         NKBlocksAndItems.createAndRegisterSugarSlayerSwordItem();
-
         Spikes spikes = NKBlocksAndItems.createAndRegisterSpikes();
         NKBlocksAndItems.createAndRegisterSpikesBlockItem(spikes);
+        NKBlocksAndItems.createAndRegisterChembombItem();
     }
 
 

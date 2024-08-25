@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
+import org.nk.chemworld.Chembomb;
 import org.nk.drinkworld.BobaTeaItem;
 import org.nk.drinkworld.Spikes;
 import org.nk.drinkworld.SpikesBlockItem;
@@ -59,6 +60,14 @@ public class NKBlocksAndItems {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // PRANAV
+    public static @NotNull Item createAndRegisterChembombItem() {
+        Item.Settings itemSettings = new Item.Settings();
+        Item chembombItem = new Chembomb (itemSettings);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chembomb"), chembombItem);
+        // Add it to the group / toolbox
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(chembombItem));
+        return chembombItem;
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

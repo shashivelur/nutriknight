@@ -1,8 +1,16 @@
 {
   "item.nutriknight.bobatea": "Boba Tea",
   "itemTooltip.nutriknight.bobatea": "This is a Boba tea drink available in the Drinkworld of the Nutriknight game",
+<<<<<<< Updated upstream
   "item.nutriknight.sugarslayer": "Sugar Slayer",
   "itemTooltip.nutriknight.sugarslayer": "This is a item used the kill the Boba Tea Abomination",
 
   "block.nutriknight.spikes": "Spikes"
 }
+=======
+
+  "item.nutriknight.chembomb": "chemical bomb",
+  "itemTooltip.nutriknight.chembomb": "This is a chemical bomb available in the Chemicalworld of the Nutriknight game"
+
+}
+>>>>>>> Stashed changes
