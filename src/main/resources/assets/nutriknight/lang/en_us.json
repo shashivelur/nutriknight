@@ -1,4 +1,8 @@
 {
   "item.nutriknight.bobatea": "Boba Tea",
-  "itemTooltip.nutriknight.bobatea": "This is a Boba tea drink available in the Drinkworld of the Nutriknight game"
+  "itemTooltip.nutriknight.bobatea": "This is a Boba tea drink available in the Drinkworld of the Nutriknight game",
+  "item.nutriknight.sugarslayer": "Sugar Slayer",
+  "itemTooltip.nutriknight.sugarslayer": "This is a item used the kill the Boba Tea Abomination",
+
+  "block.nutriknight.spikes": "Spikes"
 }

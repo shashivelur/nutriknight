@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nutriknight.client.iml" filepath="$PROJECT_DIR$/.idea/modules/nutriknight.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nutriknight.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nutriknight.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nutriknight.test.iml" filepath="$PROJECT_DIR$/.idea/modules/nutriknight.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.nk.nutriknight.client.iml" filepath="$PROJECT_DIR$/.idea/modules/org.nk.nutriknight.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.nk.nutriknight.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.nk.nutriknight.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.nk.nutriknight.test.iml" filepath="$PROJECT_DIR$/.idea/modules/org.nk.nutriknight.test.iml" />
     </modules>
   </component>
 </project>
