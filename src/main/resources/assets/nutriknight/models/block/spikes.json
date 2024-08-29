@@ -1,6 +1,6 @@
 {
-  "parent": "block/block",
+  "parent": "block/cube_all",
   "textures": {
-    "0": "nutriknight:block/spikes"
+    "all": "nutriknight:block/spikes"
   }
 }

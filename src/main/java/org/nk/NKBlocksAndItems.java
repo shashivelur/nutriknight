@@ -15,6 +15,10 @@ import org.nk.drinkworld.BobaTeaItem;
 import org.nk.drinkworld.Spikes;
 import org.nk.drinkworld.SpikesBlockItem;
 import org.nk.drinkworld.SugarSlayerSwordItem;
+import org.nk.drinkworld.Cornsyrup;
+import org.nk.drinkworld.BigRed;
+import org.nk.drinkworld.Coke;
+import org.nk.drinkworld.Mentos;
 
 /**
  * Add methods for creation of Blocks and Items here
@@ -57,6 +61,38 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(sssItem));
         return sssItem;
     }
+
+        public static @NotNull Cornsyrup createAndRegisterCornsyrup() {
+
+        Cornsyrup csItem = new Cornsyrup();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cornsyrup"), csItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(csItem));
+        return csItem;
+    }
+
+        public static @NotNull BigRed createAndRegisterBigRed() {
+
+        BigRed brItem = new BigRed();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "bigred"), brItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(brItem));
+        return brItem;
+    }
+
+        public static @NotNull Coke createAndRegisterCoke() {
+
+        Coke cItem = new Coke();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "coke"), cItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(cItem));
+        return cItem;
+
+    }
+    public static @NotNull Mentos createAndRegisterMentos() {
+        Mentos mItem = new Mentos();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "mentos"), mItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(mItem));
+        return mItem;
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // PRANAV

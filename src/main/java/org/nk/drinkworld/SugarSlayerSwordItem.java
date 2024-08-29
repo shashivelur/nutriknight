@@ -19,6 +19,11 @@ public class SugarSlayerSwordItem extends SwordItem {
 
     }
 
+
+    public float getAttackDamage() {
+        return 30F;
+    }
+
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("itemTooltip.nutriknight.sugarslayer").formatted(Formatting.DARK_GREEN));
     }
