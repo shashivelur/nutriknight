@@ -1,12 +1,13 @@
 package org.nk;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,6 +20,9 @@ import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.BigRed;
 import org.nk.drinkworld.Coke;
 import org.nk.drinkworld.Mentos;
+import org.nk.frozenworld.FrostSword;
+import org.nk.frozenworld.IceCream;
+import org.nk.frozenworld.VolcanoCrust;
 
 /**
  * Add methods for creation of Blocks and Items here
@@ -108,6 +112,28 @@ public class NKBlocksAndItems {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // SHIVANK
+//    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(nutriknight, "item_group"));
+//    public static final ItemGroup FROZEN_WORLD = FabricItemGroup.builder();
+   public static @NotNull IceCream createAndRegisterIceCream() {
+        Block.Settings IceCreamSettings = Block.Settings.create().strength(16.0f);
+        IceCream IceCream = new IceCream(IceCreamSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "ice_cream"), IceCream);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "ice_cream"), new BlockItem(IceCream, new Item.Settings()));
+        return IceCream;
+    }
+    public static @NotNull VolcanoCrust createAndRegisterVolcanoCrust(){
+        Block.Settings VolcanoCrustSettings = Block.Settings.create().strength(16.0f);
+        VolcanoCrust VolcanoCrust = new VolcanoCrust(VolcanoCrustSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "volcanocrust"), VolcanoCrust);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "volcanocrust"), new BlockItem(VolcanoCrust, new Item.Settings()));
+        return VolcanoCrust;
+    }
+    public static Item createAndRegisterFrostSword() {
+        FrostSword frostSword = new FrostSword();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "frostsword"), frostSword);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(frostSword));
+        return frostSword;
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

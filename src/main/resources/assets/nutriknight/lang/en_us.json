@@ -10,5 +10,9 @@
   "item.nutriknight.cornsyrup": "Corn Syrup",
   "item.nutriknight.bigred": "Big Red",
   "item.nutriknight.coke": "Coke",
-  "item.nutriknight.mentos": "Mentos"
+  "item.nutriknight.mentos": "Mentos",
+  "block.nutriknight.ice_cream": "Ice Cream",
+  "block.nutriknight.volcanocrust": "Volcano Crust",
+  "item.nutriknight.frostsword": "Frost Sword",
+  "itemTooltip.nutriknight.frostsword": "This is a Sword found in the Frozen World."
 }

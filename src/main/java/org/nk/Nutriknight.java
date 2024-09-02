@@ -17,6 +17,9 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.createAndRegisterBigRed();
         NKBlocksAndItems.createAndRegisterCoke();
         NKBlocksAndItems.createAndRegisterMentos();
+        NKBlocksAndItems.createAndRegisterIceCream();
+        NKBlocksAndItems.createAndRegisterVolcanoCrust();
+        NKBlocksAndItems.createAndRegisterFrostSword();
     }
 
 
