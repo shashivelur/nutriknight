@@ -1,16 +1,14 @@
 package org.nk;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
+import org.nk.chemworld.Chemblock;
 import org.nk.chemworld.Chembomb;
 import org.nk.drinkworld.BobaTeaItem;
 import org.nk.drinkworld.Spikes;
@@ -108,6 +106,21 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(chembombItem));
         return chembombItem;
     }
+    public static Chemblock createAndRegisterChemblock() {
+        Block.Settings chemblockSettings = Block.Settings.create().strength(16.0f);//.dropsLike(Block.getBlockFromItem(new MilkBucketItem(new Item.Settings())));
+        Chemblock chemblock = new Chemblock(chemblockSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "chemblock"), chemblock);
+        return chemblock;
+    }
+    public static @NotNull BlockItem createAndRegisterChemBlockItem(Chemblock chemblock){
+        SpikesBlockItem chemBlockItem = new SpikesBlockItem(chemblock, new Item.Settings());
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemblock"), chemBlockItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register((itemGroup) -> {
+            itemGroup.add(chemBlockItem.asItem());
+        });
+        return chemBlockItem;
+    }
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
