@@ -1,6 +1,7 @@
 package org.nk;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -18,9 +19,13 @@ import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.BigRed;
 import org.nk.drinkworld.Coke;
 import org.nk.drinkworld.Mentos;
-import org.nk.frozenworld.FrostSword;
-import org.nk.frozenworld.IceCream;
-import org.nk.frozenworld.VolcanoCrust;
+import org.nk.frozenworld.*;
+import org.nk.healthyfoods.Banana;
+import org.nk.healthyfoods.Broccoli;
+import org.nk.healthyfoods.Corn;
+import org.nk.healthyfoods.GreenSword;
+
+import static org.nk.Nutriknight.*;
 
 /**
  * Add methods for creation of Blocks and Items here
@@ -135,10 +140,11 @@ public class NKBlocksAndItems {
         return IceCream;
     }
     public static @NotNull VolcanoCrust createAndRegisterVolcanoCrust(){
-        Block.Settings VolcanoCrustSettings = Block.Settings.create().strength(16.0f);
+        Block.Settings VolcanoCrustSettings = Block.Settings.create().strength(20.0f);
         VolcanoCrust VolcanoCrust = new VolcanoCrust(VolcanoCrustSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "volcanocrust"), VolcanoCrust);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "volcanocrust"), new BlockItem(VolcanoCrust, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(VolcanoCrust));
         return VolcanoCrust;
     }
     public static Item createAndRegisterFrostSword() {
@@ -147,6 +153,72 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(frostSword));
         return frostSword;
     }
+    public static WaffleCone createAndRegisterWaffleCone() {
+        Block.Settings WaffleConeSettings = Block.Settings.create().strength(16.0f);
+        WaffleCone WaffleCone = new WaffleCone(WaffleConeSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "wafflecone"), WaffleCone);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "wafflecone"), new BlockItem(WaffleCone, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(WaffleCone));
+
+        return WaffleCone;
+    }
+    public static IceCreamFood createAndRegisterIceCreamFood() {
+        IceCreamFood icecreamfood = new IceCreamFood();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "icecreamfood"), icecreamfood);
+        // Add it to the group / toolbox
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(icecreamfood));
+        return icecreamfood;
+    }
+    public static Icee createAndRegisterIcee(){
+        Icee Icee = new Icee();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "icee"), Icee);
+        // Add it to the group / toolbox
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(Icee));
+        return Icee;
+    }
+    public static CustardBlock createAndRegisterCustardBlock() {
+        Block.Settings CustardBlockSettings = Block.Settings.create().strength(16.0f);
+        CustardBlock CustardBlock = new CustardBlock(CustardBlockSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "custardblock"), CustardBlock);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "custardblock"), new BlockItem(CustardBlock, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(CustardBlock));
+
+        return CustardBlock;
+    }
+    public static @NotNull PinkIceCream createAndRegisterPinkIceCream() {
+        Block.Settings PinkIceCreamSettings = Block.Settings.create().strength(16.0f);
+        PinkIceCream PinkIceCream = new PinkIceCream(PinkIceCreamSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "pinkice_cream"), PinkIceCream);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pinkice_cream"), new BlockItem(PinkIceCream, new Item.Settings()));
+        return PinkIceCream;
+    }
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Greens world
+    public static Broccoli createAndRegisterBroccoli(){
+        Broccoli Broccoli = new Broccoli();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "broccoli"), Broccoli);
+        // Add it to the group / toolbox
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(Broccoli));
+        return Broccoli;
+    }
+    public static Banana createAndRegisterBanana(){
+        Banana Banana = new Banana();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "banana"), Banana);
+        // Add it to the group / toolbox
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(Banana));
+        return Banana;
+    }
+    public static @NotNull GreenSword createAndRegisterGreenSword() {
+        GreenSword GreenSword = new GreenSword();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "greensword"), GreenSword);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(GreenSword));
+        return GreenSword;
+    }
+
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

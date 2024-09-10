@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "nutriknight:block/pinkice_cream",
+    "down": "nutriknight:block/pinkice_cream_bottom",
+    "up": "nutriknight:block/pinkice_cream_top",
+    "north": "nutriknight:block/pinkice_cream",
+    "east": "nutriknight:block/pinkice_cream",
+    "south": "nutriknight:block/pinkice_cream",
+    "west": "nutriknight:block/pinkice_cream"
+  }
+}

@@ -2,9 +2,8 @@ package org.nk.frozenworld;
 
 import net.minecraft.block.Block;
 
-
-public class IceCream extends Block {
-    public IceCream(Settings settings) {
+public class CustardBlock extends Block{
+    public CustardBlock(Settings settings) {
         super(settings);
     }
 }

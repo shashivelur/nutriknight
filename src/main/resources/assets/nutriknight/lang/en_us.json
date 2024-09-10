@@ -14,5 +14,17 @@
   "block.nutriknight.ice_cream": "Ice Cream",
   "block.nutriknight.volcanocrust": "Volcano Crust",
   "item.nutriknight.frostsword": "Frost Sword",
-  "itemTooltip.nutriknight.frostsword": "This is a Sword found in the Frozen World."
+  "itemTooltip.nutriknight.frostsword": "This is a Sword found in the Frozen World.",
+  "block.nutriknight.wafflecone": "Waffle Cone",
+  "item.nutriknight.icecreamfood": "Ice Cream Treat",
+  "item.nutriknight.icee": "ICEE",
+  "itemTooltip.nutriknight.icecreamfood": "This is a treat that gives you instant damage and weakness as it lacks nutrition.",
+  "block.nutriknight.custardblock": "Custard Block",
+  "block.nutriknight.pinkice_cream": "Pink Ice Cream",
+  "item.nutriknight.broccoli": "Broccoli",
+  "itemTooltip.nutriknight.broccoli": "This instantly heals you and gives you a glowing effect because it has lots of nutrients in it.",
+  "item.nutriknight.banana": "Banana",
+  "itemTooltip.nutriknight.banana": "This gives you a higher jump as bananas have nutrients in them which give you energy.",
+  "item.nutriknight.greensword": "Greens Sword",
+  "item.nutriknight.corn": "Corn Bow"
 }
