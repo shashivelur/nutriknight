@@ -40,7 +40,6 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.createAndRegisterChembombItem();
         NKBlocksAndItems.createAndRegisterChemblock();
         NKBlocksAndItems.createAndRegisterCornsyrup();
-        NKBlocksAndItems.createAndRegisterBigRed();
         NKBlocksAndItems.createAndRegisterCoke();
         NKBlocksAndItems.createAndRegisterMentos();
         NKBlocksAndItems.createAndRegisterIceCream();
@@ -55,8 +54,18 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.createAndRegisterBanana();
         NKBlocksAndItems.createAndRegisterGreenSword();
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "corn"), CORN_BOW);
-
+        NKBlocksAndItems.createAndRegisterRedBull();
+        NKBlocksAndItems.createAndRegisterKaleJuice();
+        NKBlocksAndItems.createAndRegisterEspresso();
+        NKBlocksAndItems.createAndRegisterBroccoli();
+        NKBlocksAndItems.createAndRegisterSpinach();
+        NKBlocksAndItems.createAndRegisterLettuce();
+        NKBlocksAndItems.createAndRegisterTomato();
+        NKBlocksAndItems.createAndRegisterBurger();
+        NKBlocksAndItems.createAndRegisterBurgerBlaster();
+        NKBlocksAndItems.createAndRegisterFrenchFryArrow();
+        NKBlocksAndItems.createAndRegisterFrenchFry();
+        NKBlocksAndItems.createAndRegisterChickenSword();
+        NKBlocksAndItems.createAndRegisterChickenNugget();
     }
-
-
 }

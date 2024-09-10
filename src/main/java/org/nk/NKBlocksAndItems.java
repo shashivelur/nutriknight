@@ -16,16 +16,17 @@ import org.nk.drinkworld.Spikes;
 import org.nk.drinkworld.SpikesBlockItem;
 import org.nk.drinkworld.SugarSlayerSwordItem;
 import org.nk.drinkworld.Cornsyrup;
-import org.nk.drinkworld.BigRed;
 import org.nk.drinkworld.Coke;
 import org.nk.drinkworld.Mentos;
 import org.nk.frozenworld.*;
 import org.nk.healthyfoods.Banana;
 import org.nk.healthyfoods.Broccoli;
-import org.nk.healthyfoods.Corn;
 import org.nk.healthyfoods.GreenSword;
-
-import static org.nk.Nutriknight.*;
+import org.nk.drinkworld.*;
+import org.nk.fastfoodland.*;
+import org.nk.fastfoodland.Lettuce;
+import org.nk.fastfoodland.Spinach;
+import org.nk.fastfoodland.Tomato;
 
 /**
  * Add methods for creation of Blocks and Items here
@@ -77,13 +78,7 @@ public class NKBlocksAndItems {
         return csItem;
     }
 
-        public static @NotNull BigRed createAndRegisterBigRed() {
 
-        BigRed brItem = new BigRed();
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "bigred"), brItem);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(brItem));
-        return brItem;
-    }
 
         public static @NotNull Coke createAndRegisterCoke() {
 
@@ -99,6 +94,106 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(mItem));
         return mItem;
     }
+
+    public static @NotNull RedBull createAndRegisterRedBull() {
+        RedBull rbItem = new RedBull();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "rbull"), rbItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(rbItem));
+        return rbItem;
+    }
+    public static @NotNull KaleJuice createAndRegisterKaleJuice() {
+        KaleJuice kItem = new KaleJuice();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "kjuice"), kItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(kItem));
+        return kItem;
+    }
+
+    public static @NotNull Espresso createAndRegisterEspresso() {
+        Espresso eItem = new Espresso();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "espresso"), eItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(eItem));
+        return eItem;
+    }
+    //FASTFOODLAND
+    public static @NotNull Spinach createAndRegisterSpinach() {
+        Spinach sitem =new Spinach();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "sitem"), sitem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(sitem));
+        return sitem;
+    }
+
+    public static @NotNull Lettuce createAndRegisterLettuce() {
+        Lettuce litem=new Lettuce();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "litem"), litem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(litem));
+        return litem;
+    }
+
+    public static @NotNull Tomato createAndRegisterTomato() {
+        Tomato titem=new Tomato();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "titem"), titem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(titem));
+        return titem;
+    }
+
+
+
+    public static @NotNull Burger createAndRegisterBurger() {
+        Burger britem=new Burger();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "britem"), britem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(britem));
+        return britem;
+    }
+
+    public static @NotNull BurgerBlaster createAndRegisterBurgerBlaster() {
+        BurgerBlaster brbitem=new BurgerBlaster();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "brbitem"), brbitem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(brbitem));
+        return brbitem;
+    }
+
+    public static @NotNull Ketchup createAndRegisterFrenchFryArrow() {
+        Ketchup fraitem=new Ketchup();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "fraitem"), fraitem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(fraitem));
+        return fraitem;
+    }
+
+    public static @NotNull FrenchFry createAndRegisterFrenchFry() {
+        FrenchFry fritem=new FrenchFry();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "fritem"), fritem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(fritem));
+        return fritem;
+    }
+
+    public static @NotNull ChickenSword createAndRegisterChickenSword() {
+        ChickenSword csword=new ChickenSword();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "csword"), csword);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(csword));
+        return csword;
+    }
+
+    public static @NotNull ChickenNugget createAndRegisterChickenNugget() {
+        ChickenNugget cnitem=new ChickenNugget();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cnitem"), cnitem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(cnitem));
+        return cnitem;
+    }
+
+//    public static @NotNull Puzzle createAndRegisterPuzzle() {
+///        Puzzle pitem;
+  //      pitem = new Puzzle();
+ //       Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pitem"), pitem);
+  //      ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(pitem));
+  //      return pitem;
+  //  }
+
+
+
+
+
+
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
