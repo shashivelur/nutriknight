@@ -27,12 +27,15 @@ import org.nk.healthyfoods.Broccoli;
 import org.nk.healthyfoods.GreenSword;
 import org.nk.drinkworld.*;
 import org.nk.fastfoodland.*;
-import org.nk.fastfoodland.Lettuce;
-import org.nk.fastfoodland.Spinach;
-import org.nk.fastfoodland.Tomato;
+
 import org.nk.frozenworld.FrostSword;
 import org.nk.cerealcity.CerealBlock;
 import org.nk.frozenworld.VolcanoCrust;
+
+import org.nk.healthyfoods.Lettuce;
+import org.nk.healthyfoods.Spinach;
+import org.nk.healthyfoods.Tomato;
+
 
 /**
  * Add methods for creation of Blocks and Items here
@@ -123,26 +126,7 @@ public class NKBlocksAndItems {
         return eItem;
     }
     //FASTFOODLAND
-    public static @NotNull Spinach createAndRegisterSpinach() {
-        Spinach sitem =new Spinach();
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "sitem"), sitem);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(sitem));
-        return sitem;
-    }
 
-    public static @NotNull Lettuce createAndRegisterLettuce() {
-        Lettuce litem=new Lettuce();
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "litem"), litem);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(litem));
-        return litem;
-    }
-
-    public static @NotNull Tomato createAndRegisterTomato() {
-        Tomato titem=new Tomato();
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "titem"), titem);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(titem));
-        return titem;
-    }
 
 
 
@@ -320,6 +304,27 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(GreenSword));
         return GreenSword;
     }
+    public static @NotNull Spinach createAndRegisterSpinach() {
+        Spinach spinach =new Spinach();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "spinach"), spinach);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(spinach));
+        return spinach;
+    }
+
+    public static @NotNull Lettuce createAndRegisterLettuce() {
+        Lettuce lettuce=new Lettuce();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "lettuce"), lettuce);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(lettuce));
+        return lettuce;
+    }
+
+    public static @NotNull Tomato createAndRegisterTomato() {
+        Tomato tomato=new Tomato();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "tomato"), tomato);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(tomato));
+        return tomato;
+    }
+
 
 
 

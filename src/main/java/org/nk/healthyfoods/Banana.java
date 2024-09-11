@@ -24,7 +24,7 @@ public class Banana extends Item {
         return new Item.Settings().food(Banana);
     }
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.nutriknight.corn").formatted(Formatting.YELLOW));
+        tooltip.add(Text.translatable("itemTooltip.nutriknight.banana").formatted(Formatting.YELLOW));
     }
 }
 

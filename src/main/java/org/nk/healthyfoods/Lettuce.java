@@ -1,4 +1,4 @@
-package org.nk.fastfoodland;
+package org.nk.healthyfoods;
 
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -19,7 +19,7 @@ public class Lettuce extends Item {
 
     private static Item.Settings createSettings() {
 
-        FoodComponent litem = new FoodComponent.Builder()
+        FoodComponent lettuce = new FoodComponent.Builder()
                 .alwaysEdible()
                 .snack()
                 // The duration is in ticks, 20 ticks = 1 second
@@ -31,7 +31,10 @@ public class Lettuce extends Item {
 
                 .nutrition(2)
                 .build();
-        return new Item.Settings().food(litem);
+        return new Item.Settings().food(lettuce);
+    }
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("itemTooltip.nutriknight.broccoli").formatted(Formatting.GREEN));
     }
 
 
