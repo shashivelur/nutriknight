@@ -44,5 +44,9 @@
   "item.nutriknight.fritem": "FrenchFry",
   "item.nutriknight.csword": "Chicken Sword",
   "item.nutriknight.cnitem": "Chicken Nugget",
-  "itemTooltip.nutriknight.csword": "This sword was dropped by the chicken warriors"
+  "itemTooltip.nutriknight.csword": "This sword was dropped by the chicken warriors",
+  "itemTooltip.nutriknight.wafflecone": "This is the cone from Ice Cream Mountain.",
+  "item.nutriknight.oats": "Oats",
+  "item.nutriknight.cereal": "Cereal Food",
+  "": ""
 }
