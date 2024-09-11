@@ -16,19 +16,11 @@ import net.minecraft.util.Identifier;
 import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.Spikes;
 import org.nk.healthyfoods.Corn;
-//import org.nk.healthyfoods.CornProjectile;
 
 
 public class Nutriknight implements ModInitializer {
     public static final String MOD_ID = "nutriknight";
     public static final Item CORN_BOW = new Corn(new Item.Settings());
-
-//    public static final EntityType<CornProjectile> CORN_PROJECTILE = Registry.register(
-//            Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "corn"),
-//            FabricEntityTypeBuilder.create(SpawnGroup.MISC, CornProjectile::new)
-//                    .build());
-
-
 
     @Override
     public void onInitialize() {
@@ -67,5 +59,10 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.createAndRegisterFrenchFry();
         NKBlocksAndItems.createAndRegisterChickenSword();
         NKBlocksAndItems.createAndRegisterChickenNugget();
+        NKBlocksAndItems.cerealSword();
+        NKBlocksAndItems.cerealItem();
+        NKBlocksAndItems.oatsItem();
+        //NKBlocksAndItems.ToxicBucket();
+        NKBlocksAndItems.CerealBlock();
     }
 }
