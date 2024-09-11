@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "nutriknight:block/cereal_block",
+    "down": "nutriknight:block/cereal_block_bottom",
+    "up": "nutriknight:block/cereal_block_top",
+    "north": "nutriknight:block/cereal_block_side",
+    "east": "nutriknight:block/cereal_block_side",
+    "south": "nutriknight:block/cereal_block_side",
+    "west": "nutriknight:block/cereal_block_side"
+  }
+}
