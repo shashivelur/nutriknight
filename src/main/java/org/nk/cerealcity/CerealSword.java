@@ -25,5 +25,6 @@ public class CerealSword extends SwordItem {
     }
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("itemTooltip.nutriknight.cereal_sword").formatted(Formatting.DARK_GREEN));
+
     }
 }

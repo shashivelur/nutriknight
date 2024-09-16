@@ -48,5 +48,6 @@
   "itemTooltip.nutriknight.wafflecone": "This is the cone from Ice Cream Mountain.",
   "item.nutriknight.oats": "Oats",
   "item.nutriknight.cereal": "Cereal Food",
-  "": ""
+  "item.nutriknight.cereal": "Cereal",
+  "itemTooltip.nutriknight.cereal": "This food gives you a sugar rush but also a lot af bad effects"
 }
