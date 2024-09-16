@@ -19,8 +19,7 @@ public class Broccoli extends Item {
         FoodComponent Broccoli = new FoodComponent.Builder()
                 .alwaysEdible()
                 // The duration is in ticks, 20 ticks = 1 second
-                .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 10, 1), 1.0f)
-                .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING,600,1),1.0f)
+                 .statusEffect(new StatusEffectInstance(StatusEffects.LUCK,600,1),1.0f)
                 .build();
         return new Item.Settings().food(Broccoli);
     }

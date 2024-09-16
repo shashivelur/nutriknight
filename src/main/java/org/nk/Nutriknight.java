@@ -68,5 +68,9 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.ToxicBucket();
         NKBlocksAndItems.CerealBlock();
         NKBlocksAndItems.Pizza();
+        NKBlocksAndItems.createAndRegisterPear();
+        NKBlocksAndItems.createAndRegisterStrawberry();
+        NKBlocksAndItems.createAndRegisterCheese();
+        NKBlocksAndItems.createAndRegisterYogurt();
     }
 }

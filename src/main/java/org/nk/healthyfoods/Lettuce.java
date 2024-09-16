@@ -23,10 +23,7 @@ public class Lettuce extends Item {
                 .alwaysEdible()
                 .snack()
                 // The duration is in ticks, 20 ticks = 1 second
-                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100, 1), 1.0f)
-                .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 3 * 60, 1), 1.0f)
-                .statusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 10000, 1), 1.0f)
-                .statusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 50, 1), 1.0f)
+                .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 100, 1), 1.0f)
 
 
                 .nutrition(2)
@@ -34,7 +31,7 @@ public class Lettuce extends Item {
         return new Item.Settings().food(lettuce);
     }
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.nutriknight.broccoli").formatted(Formatting.GREEN));
+        tooltip.add(Text.translatable("itemTooltip.nutriknight.lettuce").formatted(Formatting.GREEN));
     }
 
 

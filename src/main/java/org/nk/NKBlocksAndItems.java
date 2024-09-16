@@ -24,19 +24,14 @@ import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.Coke;
 import org.nk.drinkworld.Mentos;
 import org.nk.frozenworld.*;
-import org.nk.healthyfoods.Banana;
-import org.nk.healthyfoods.Broccoli;
-import org.nk.healthyfoods.GreenSword;
+import org.nk.healthyfoods.*;
 import org.nk.drinkworld.*;
 import org.nk.fastfoodland.*;
 
 import org.nk.frozenworld.FrostSword;
 import org.nk.cerealcity.CerealBlock;
 import org.nk.frozenworld.VolcanoCrust;
-
-import org.nk.healthyfoods.Lettuce;
-import org.nk.healthyfoods.Spinach;
-import org.nk.healthyfoods.Tomato;
+import org.nk.healthyfoods.Broccoli;
 
 
 /**
@@ -234,25 +229,26 @@ public class NKBlocksAndItems {
     // SHIVANK
 //    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(nutriknight, "item_group"));
 //    public static final ItemGroup FROZEN_WORLD = FabricItemGroup.builder();
-   public static @NotNull CerealBlock createAndRegisterIceCream() {
+   public static @NotNull IceCream createAndRegisterIceCream() {
         Block.Settings IceCreamSettings = Block.Settings.create().strength(16.0f);
-        CerealBlock IceCream = new CerealBlock(IceCreamSettings);
+       IceCream IceCream = new IceCream(IceCreamSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "ice_cream"), IceCream);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "ice_cream"), new BlockItem(IceCream, new Item.Settings()));
-        return IceCream;
+       ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(IceCream));
+       return IceCream;
     }
     public static @NotNull VolcanoCrust createAndRegisterVolcanoCrust(){
         Block.Settings VolcanoCrustSettings = Block.Settings.create().strength(20.0f);
         VolcanoCrust VolcanoCrust = new VolcanoCrust(VolcanoCrustSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "volcanocrust"), VolcanoCrust);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "volcanocrust"), new BlockItem(VolcanoCrust, new Item.Settings()));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(VolcanoCrust));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(VolcanoCrust));
         return VolcanoCrust;
     }
     public static Item createAndRegisterFrostSword() {
         FrostSword frostSword = new FrostSword();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "frostsword"), frostSword);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(frostSword));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(frostSword));
         return frostSword;
     }
     public static WaffleCone createAndRegisterWaffleCone() {
@@ -260,7 +256,7 @@ public class NKBlocksAndItems {
         WaffleCone WaffleCone = new WaffleCone(WaffleConeSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "wafflecone"), WaffleCone);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "wafflecone"), new BlockItem(WaffleCone, new Item.Settings()));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(WaffleCone));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(WaffleCone));
 
         return WaffleCone;
     }
@@ -268,14 +264,14 @@ public class NKBlocksAndItems {
         IceCreamFood icecreamfood = new IceCreamFood();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "icecreamfood"), icecreamfood);
         // Add it to the group / toolbox
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(icecreamfood));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(icecreamfood));
         return icecreamfood;
     }
     public static Icee createAndRegisterIcee(){
         Icee Icee = new Icee();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "icee"), Icee);
         // Add it to the group / toolbox
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(Icee));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Icee));
         return Icee;
     }
     public static CustardBlock createAndRegisterCustardBlock() {
@@ -283,7 +279,7 @@ public class NKBlocksAndItems {
         CustardBlock CustardBlock = new CustardBlock(CustardBlockSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "custardblock"), CustardBlock);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "custardblock"), new BlockItem(CustardBlock, new Item.Settings()));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(CustardBlock));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(CustardBlock));
 
         return CustardBlock;
     }
@@ -292,6 +288,7 @@ public class NKBlocksAndItems {
         PinkIceCream PinkIceCream = new PinkIceCream(PinkIceCreamSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "pinkice_cream"), PinkIceCream);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pinkice_cream"), new BlockItem(PinkIceCream, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(PinkIceCream));
         return PinkIceCream;
     }
 
@@ -303,20 +300,20 @@ public class NKBlocksAndItems {
         Broccoli Broccoli = new Broccoli();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "broccoli"), Broccoli);
         // Add it to the group / toolbox
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(Broccoli));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Broccoli));
         return Broccoli;
     }
     public static Banana createAndRegisterBanana(){
         Banana Banana = new Banana();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "banana"), Banana);
         // Add it to the group / toolbox
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(Banana));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Banana));
         return Banana;
     }
     public static @NotNull GreenSword createAndRegisterGreenSword() {
         GreenSword GreenSword = new GreenSword();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "greensword"), GreenSword);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(GreenSword));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(GreenSword));
         return GreenSword;
     }
     public static @NotNull Spinach createAndRegisterSpinach() {
@@ -338,6 +335,32 @@ public class NKBlocksAndItems {
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "tomato"), tomato);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(tomato));
         return tomato;
+    }
+    public static @NotNull Pear createAndRegisterPear() {
+        Pear Pear=new Pear();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pear"), Pear);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Pear));
+        return Pear;
+    }
+    public static @NotNull Strawberry createAndRegisterStrawberry() {
+        Strawberry Strawberry=new Strawberry();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "strawberry"), Strawberry);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Strawberry));
+        return Strawberry;
+    }
+    public static @NotNull CheeseBlock createAndRegisterCheese() {
+        Block.Settings CheeseBlockSettings = Block.Settings.create().strength(16.0f);
+        CheeseBlock CheeseBlock = new CheeseBlock(CheeseBlockSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "cheeseblock"), CheeseBlock);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cheeseblock"), new BlockItem(CheeseBlock, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(CheeseBlock));
+        return CheeseBlock;
+    }
+    public static @NotNull Yogurt createAndRegisterYogurt() {
+        Yogurt Yogurt=new Yogurt();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "yogurt"), Yogurt);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Yogurt));
+        return Yogurt;
     }
 
 

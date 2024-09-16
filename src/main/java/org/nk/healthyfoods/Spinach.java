@@ -17,9 +17,7 @@ public class Spinach extends Item {
                 .alwaysEdible()
                 .snack()
                 // The duration is in ticks, 20 ticks = 1 second
-                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100, 1), 1.0f)
-                .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 3 * 60, 1), 1.0f)
-
+                .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100, 1), 1.0f)
 
                 .nutrition(2)
                 .build();
