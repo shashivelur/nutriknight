@@ -13,6 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.nk.chemworld.Chemblock;
 import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.Spikes;
 import org.nk.healthyfoods.Corn;
@@ -30,7 +31,9 @@ public class Nutriknight implements ModInitializer {
         Spikes spikes = NKBlocksAndItems.createAndRegisterSpikes();
         NKBlocksAndItems.createAndRegisterSpikesBlockItem(spikes);
         NKBlocksAndItems.createAndRegisterChembombItem();
+        Chemblock chemblock = NKBlocksAndItems.createAndRegisterChemblock();
         NKBlocksAndItems.createAndRegisterChemblock();
+        NKBlocksAndItems.createAndRegisterGChembombItem();
         NKBlocksAndItems.createAndRegisterCornsyrup();
         NKBlocksAndItems.createAndRegisterCoke();
         NKBlocksAndItems.createAndRegisterMentos();

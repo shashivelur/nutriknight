@@ -46,4 +46,8 @@ public class Chembomb  extends Item implements ProjectileItem {
     public ProjectileEntity createEntity(World world, Position pos, ItemStack stack, Direction direction) {
         return null;
     }
+
+    public float getAttackDamage() {
+        return 8F;
+    }
 }

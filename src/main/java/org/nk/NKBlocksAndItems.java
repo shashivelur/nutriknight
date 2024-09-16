@@ -11,6 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
+import org.nk.chemworld.ChemBlockitem;
 import org.nk.chemworld.Chemblock;
 import org.nk.cerealcity.*;
 import org.nk.chemworld.Chembomb;
@@ -204,14 +205,23 @@ public class NKBlocksAndItems {
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "chemblock"), chemblock);
         return chemblock;
     }
-    public static @NotNull BlockItem createAndRegisterChemBlockItem(Chemblock chemblock){
-        SpikesBlockItem chemBlockItem = new SpikesBlockItem(chemblock, new Item.Settings());
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemblock"), chemBlockItem);
+    public static @NotNull BlockItem createAndRegisterChemBlockItem(Chemblock chemblockBlock){
+        ChemBlockitem ChemBlockitem = new ChemBlockitem(chemblockBlock, new Item.Settings());
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemblock"), ChemBlockitem);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register((itemGroup) -> {
-            itemGroup.add(chemBlockItem.asItem());
+            itemGroup.add(ChemBlockitem.asItem());
         });
-        return chemBlockItem;
+        return ChemBlockitem;
     }
+    public static @NotNull Item createAndRegisterGChembombItem() {
+        Item.Settings itemSettings = new Item.Settings();
+        Item chembombItem = new Chembomb (itemSettings);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "gchembomb"), chembombItem);
+        // Add it to the group / toolbox
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(chembombItem));
+        return chembombItem;
+    }
+
 
 
 
