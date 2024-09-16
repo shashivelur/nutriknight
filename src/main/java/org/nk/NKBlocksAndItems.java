@@ -397,6 +397,12 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(pizza));
         return pizza;
     }
+    public static @NotNull Item Roti() {
+        Item roti = new Roti();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "roti"), roti);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(roti));
+        return roti;
+    }
 
     public static void  ToxicBucket() {
 //        STILL_ACID = Registry.register(Registries.FLUID, new Identifier("tutorial", "acid"), new AcidFluid.Still());
