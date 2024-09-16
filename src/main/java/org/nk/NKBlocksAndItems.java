@@ -1,6 +1,7 @@
 package org.nk;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -41,6 +42,10 @@ import org.nk.healthyfoods.Tomato;
  * Add methods for creation of Blocks and Items here
  */
 public class NKBlocksAndItems {
+    public static FlowableFluid STILL_MILK;
+    public static FlowableFluid FLOWING_MILK;
+    public static Item TOXIC_MILK_BUCKET;
+    public static Block MILK;
 
     private static AbstractBlock.Settings MazeWallSettings;
 
@@ -339,6 +344,7 @@ public class NKBlocksAndItems {
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cereal_sword"), sssItem);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> itemGroup.add(sssItem));
         return sssItem;
+
     }
     public static @NotNull Item cerealItem() {
         Item cereal = new CerealItem();
@@ -346,32 +352,37 @@ public class NKBlocksAndItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(cereal));
         return cereal;
     }
-    public static FlowableFluid Still_milk;
-    public static FlowableFluid Flowing_milk;
-    public static Item Toxic_Milk_Bucket;
     public static @NotNull Item oatsItem() {
         Item oats = new OatsItem();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "oats"), oats);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(oats));
         return oats;
     }
-    public static @NotNull void  ToxicBucket() {
-        BucketItem bucketItem = new BucketItem(Still_milk, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(16));
+    public static @NotNull Item Pizza() {
+        Item pizza = new Pizza();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pizza"), pizza);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(pizza));
+        return pizza;
+    }
 
-        Still_milk = Registry.register(Registries.FLUID, Identifier.of("nutriknight", "toxic_milk"), new ToxicMilk());
-        Flowing_milk = Registry.register(Registries.FLUID, Identifier.of("nutriknight", "flowing_toxic_milk"), new ToxicMilk());
-        Toxic_Milk_Bucket = Registry.register(Registries.ITEM, Identifier.of("nutriknight", "toxic_milk_bucket"), bucketItem);
-        Registry.register(
-                Registries.BLOCK,
-                Identifier.of("nutriknight", "toxic"),
-                new FluidBlock(Still_milk, AbstractBlock.Settings.create().liquid()) {
-                });
-        }
-        public static @NotNull CerealBlock CerealBlock() {
-            Block.Settings IceCreamSettings = Block.Settings.create().strength(16.0f);
-            CerealBlock cerealBlock = new CerealBlock(IceCreamSettings);
-            Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "cereal_block"), cerealBlock);
-            Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cereal_block"), new BlockItem(cerealBlock, new Item.Settings()));
-            return cerealBlock;
-        }
+    public static void  ToxicBucket() {
+//        STILL_ACID = Registry.register(Registries.FLUID, new Identifier("tutorial", "acid"), new AcidFluid.Still());
+//        FLOWING_ACID = Registry.register(Registries.FLUID, new Identifier("tutorial", "flowing_acid"), new AcidFluid.Flowing());
+//        ACID_BUCKET = Registry.register(Registries.ITEM, new Identifier("tutorial", "acid_bucket"),
+//                new BucketItem(STILL_ACID, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+        STILL_MILK = Registry.register(Registries.FLUID, Identifier.of("nutriknight", "toxic_milk"), new ToxicMilk.Still());
+        FLOWING_MILK = Registry.register(Registries.FLUID, Identifier.of("nutriknight", "flowing_toxic_milk"), new ToxicMilk.Flowing());
+        TOXIC_MILK_BUCKET = Registry.register(Registries.ITEM, Identifier.of("nutriknight", "toxic_milk_bucket"),
+                new BucketItem(STILL_MILK, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+        MILK = Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "milk"), new FluidBlock(STILL_MILK, Blocks.WATER.getSettings()){});
+    }
+
+    public static @NotNull CerealBlock CerealBlock() {
+        Block.Settings IceCreamSettings = Block.Settings.create().strength(16.0f);
+        CerealBlock cerealBlock = new CerealBlock(IceCreamSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "cereal_block"), cerealBlock);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cereal_block"), new BlockItem(cerealBlock, new Item.Settings()));
+        return cerealBlock;
+    }
 }

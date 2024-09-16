@@ -1,19 +1,21 @@
 package org.nk.cerealcity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import org.nk.NKBlocksAndItems;
 
 import static org.nk.NKBlocksAndItems.*;
 
 public class ToxicMilk extends ParentLiquid {
     @Override
     public Fluid getStill() {
-        return Still_milk;
+        return STILL_MILK;
     }
 
     @Override
@@ -33,12 +35,12 @@ public class ToxicMilk extends ParentLiquid {
 
     @Override
     public Fluid getFlowing() {
-        return Flowing_milk;
+        return FLOWING_MILK;
     }
 
     @Override
     public Item getBucketItem() {
-        return Toxic_Milk_Bucket;
+        return TOXIC_MILK_BUCKET;
     }
 
     @Override
