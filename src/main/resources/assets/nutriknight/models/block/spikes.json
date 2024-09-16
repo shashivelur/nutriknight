@@ -1,6 +1,11 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "nutriknight:block/spikes"
+    "down": "nutriknight:block/spikes_bottom",
+    "up": "nutriknight:block/spikes_top",
+    "north": "nutriknight:block/spikes_side",
+    "east": "nutriknight:block/spikes_side",
+    "south": "nutriknight:block/spikes_side",
+    "west": "nutriknight:block/spikes_side"
   }
 }

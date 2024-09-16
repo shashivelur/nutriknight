@@ -1,4 +1,4 @@
-package org.nk.healthyfoods;
+package org.nk.fastfoodland;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -9,11 +9,11 @@ import net.minecraft.util.Formatting;
 
 import java.util.List;
 
-public class CheeseBlock extends Block {
-    public CheeseBlock(Settings settings) {
+public class GreaseBlock extends Block{
+    public GreaseBlock(Settings settings) {
         super(settings);
     }
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.nutriknight.cheeseblock").formatted(Formatting.GREEN));
+        tooltip.add(Text.translatable("itemTooltip.nutriknight.gblock").formatted(Formatting.GREEN));
     }
 }

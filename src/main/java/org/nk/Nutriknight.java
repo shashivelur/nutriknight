@@ -1,22 +1,14 @@
 package org.nk;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.nk.chemworld.Chemblock;
 import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.Spikes;
-import org.nk.healthyfoods.Corn;
+import org.nk.greensworld.Corn;
 
 
 public class Nutriknight implements ModInitializer {
@@ -73,5 +65,10 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.createAndRegisterCheese();
         NKBlocksAndItems.createAndRegisterYogurt();
         NKBlocksAndItems.Roti();
+        NKBlocksAndItems.createAndRegisterSugarBlock();
+        NKBlocksAndItems.createAndRegisterGreaseBlock();
+        NKBlocksAndItems.createAndRegisterChips();
+        NKBlocksAndItems.createAndRegisterGum();
+        NKBlocksAndItems.createAndRegisterCornsyrup();
     }
 }

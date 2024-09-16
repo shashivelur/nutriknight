@@ -1,4 +1,5 @@
-package org.nk.healthyfoods;
+package org.nk.greensworld;
+
 
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -11,26 +12,20 @@ import net.minecraft.util.Formatting;
 
 import java.util.List;
 
-public class Strawberry extends Item {
-
-    public Strawberry() {
+public class Pear extends Item {
+    public Pear() {
         super(createSettings());
     }
-
     private static Item.Settings createSettings() {
-
-        FoodComponent strawberry = new FoodComponent.Builder()
+        FoodComponent Pear = new FoodComponent.Builder()
                 .alwaysEdible()
-                .snack()
                 // The duration is in ticks, 20 ticks = 1 second
-                .statusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 100, 1), 1.0f)
-
-
-                .nutrition(2)
-                .build();
-        return new Item.Settings().food(strawberry);
+                .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 150, 1), 1.0f)
+                             .build();
+        return new Item.Settings().food(Pear);
     }
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.nutriknight.strawberrya").formatted(Formatting.GREEN));
+        tooltip.add(Text.translatable("itemTooltip.nutriknight.pear").formatted(Formatting.GREEN));
     }
 }
+

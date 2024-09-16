@@ -1,4 +1,4 @@
-package org.nk.healthyfoods;
+package org.nk.greensworld;
 
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;

@@ -1,4 +1,4 @@
-package org.nk.healthyfoods;
+package org.nk.greensworld;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

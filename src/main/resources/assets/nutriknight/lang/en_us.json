@@ -58,5 +58,9 @@
   "itemTooltip.nutriknight.corn": "This is a bow made of corn and shoots corn kernels.",
   "itemTooltip.nutriknight.greensword": "This is a sword made of green and healthy food.",
   "item.nutriknight.pear": "Pear",
-  "item.nutriknight.yogurt": "Yogurt"
+  "item.nutriknight.yogurt": "Yogurt",
+  "block.nutriknight.sblock": "Sugar Block",
+  "block.nutriknight.gblock": "Grease Block",
+  "item.nutriknight.chips": "Chips",
+  "item.nutriknight.gum": "Gum"
 }

@@ -24,15 +24,22 @@ import org.nk.drinkworld.Cornsyrup;
 import org.nk.drinkworld.Coke;
 import org.nk.drinkworld.Mentos;
 import org.nk.frozenworld.*;
-import org.nk.healthyfoods.*;
+import org.nk.greensworld.Banana;
+import org.nk.greensworld.Broccoli;
+import org.nk.greensworld.GreenSword;
 import org.nk.drinkworld.*;
 import org.nk.fastfoodland.*;
 
 import org.nk.frozenworld.FrostSword;
 import org.nk.cerealcity.CerealBlock;
 import org.nk.frozenworld.VolcanoCrust;
-import org.nk.healthyfoods.Broccoli;
 
+import org.nk.greensworld.Lettuce;
+import org.nk.greensworld.Spinach;
+import org.nk.greensworld.Tomato;
+import org.nk.snacksociety.Chips;
+import org.nk.snacksociety.Gum;
+import org.nk.greensworld.*;
 
 /**
  * Add methods for creation of Blocks and Items here
@@ -173,6 +180,26 @@ public class NKBlocksAndItems {
         return cnitem;
     }
 
+    public static SugarBlock createAndRegisterSugarBlock() {
+        Block.Settings SugarBlockSettings = Block.Settings.create().strength(16.0f);
+        SugarBlock sblock = new SugarBlock(SugarBlockSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "sblock"), sblock);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "sblock"), new BlockItem(sblock, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(sblock));
+
+        return sblock;
+    }
+
+    public static GreaseBlock createAndRegisterGreaseBlock() {
+        Block.Settings GreaseBlockSettings = Block.Settings.create().strength(16.0f);
+        GreaseBlock gblock = new GreaseBlock(GreaseBlockSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "gblock"), gblock);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "gblock"), new BlockItem(gblock, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(gblock));
+
+        return gblock;
+    }
+
 //    public static @NotNull Puzzle createAndRegisterPuzzle() {
 ///        Puzzle pitem;
   //      pitem = new Puzzle();
@@ -180,6 +207,21 @@ public class NKBlocksAndItems {
   //      ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(pitem));
   //      return pitem;
   //  }
+
+    //snacksociety
+    public static @NotNull Chips createAndRegisterChips() {
+        Chips chips=new Chips();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chips"), chips);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(chips));
+        return chips;
+    }
+
+    public static @NotNull Gum createAndRegisterGum() {
+        Gum gum=new Gum();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "gum"), gum);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(gum));
+        return gum;
+    }
 
 
 
@@ -405,11 +447,6 @@ public class NKBlocksAndItems {
     }
 
     public static void  ToxicBucket() {
-//        STILL_ACID = Registry.register(Registries.FLUID, new Identifier("tutorial", "acid"), new AcidFluid.Still());
-//        FLOWING_ACID = Registry.register(Registries.FLUID, new Identifier("tutorial", "flowing_acid"), new AcidFluid.Flowing());
-//        ACID_BUCKET = Registry.register(Registries.ITEM, new Identifier("tutorial", "acid_bucket"),
-//                new BucketItem(STILL_ACID, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
-
         STILL_MILK = Registry.register(Registries.FLUID, Identifier.of("nutriknight", "toxic_milk"), new ToxicMilk.Still());
         FLOWING_MILK = Registry.register(Registries.FLUID, Identifier.of("nutriknight", "flowing_toxic_milk"), new ToxicMilk.Flowing());
         TOXIC_MILK_BUCKET = Registry.register(Registries.ITEM, Identifier.of("nutriknight", "toxic_milk_bucket"),
