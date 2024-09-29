@@ -23,9 +23,9 @@ public class Nutriknight implements ModInitializer {
         Spikes spikes = NKBlocksAndItems.createAndRegisterSpikes();
         NKBlocksAndItems.createAndRegisterSpikesBlockItem(spikes);
         NKBlocksAndItems.createAndRegisterChembombItem();
-        Chemblock chemblock = NKBlocksAndItems.createAndRegisterChemblock();
+        //Chemblock chemblock = NKBlocksAndItems.createAndRegisterChemblock();
         NKBlocksAndItems.createAndRegisterChemblock();
-        NKBlocksAndItems.createAndRegisterGChembombItem();
+        NKBlocksAndItems.createAndRegisterchemmedicineItem();
         NKBlocksAndItems.createAndRegisterCornsyrup();
         NKBlocksAndItems.createAndRegisterCoke();
         NKBlocksAndItems.createAndRegisterMentos();

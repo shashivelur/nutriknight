@@ -1,7 +1,6 @@
 {
   "variants": {
-    "": {
-      "nutriknight": "block/chemblock"
+    "": {"model":"nutriknight block/chemblock"
     }
   }
 }

@@ -17,7 +17,7 @@ public class BobaTeaItem extends Item {
         super(createSettings());
     }
 
-    private static Item.Settings createSettings() {
+    public static Item.Settings createSettings() {
         // Create all boba tea settings here
         FoodComponent bobatea = new FoodComponent.Builder()
                 .alwaysEdible()

@@ -1,7 +1,6 @@
 package org.nk;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -12,10 +11,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
-import org.nk.chemworld.ChemBlockitem;
-import org.nk.chemworld.Chemblock;
+import org.nk.chemworld.*;
 import org.nk.cerealcity.*;
-import org.nk.chemworld.Chembomb;
 import org.nk.drinkworld.BobaTeaItem;
 import org.nk.drinkworld.Spikes;
 import org.nk.drinkworld.SpikesBlockItem;
@@ -90,7 +87,7 @@ public class NKBlocksAndItems {
         return sssItem;
     }
 
-        public static @NotNull Cornsyrup createAndRegisterCornsyrup() {
+    public static @NotNull Cornsyrup createAndRegisterCornsyrup() {
 
         Cornsyrup csItem = new Cornsyrup();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cornsyrup"), csItem);
@@ -100,7 +97,7 @@ public class NKBlocksAndItems {
 
 
 
-        public static @NotNull Coke createAndRegisterCoke() {
+    public static @NotNull Coke createAndRegisterCoke() {
 
         Coke cItem = new Coke();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "coke"), cItem);
@@ -203,11 +200,11 @@ public class NKBlocksAndItems {
 
 //    public static @NotNull Puzzle createAndRegisterPuzzle() {
 ///        Puzzle pitem;
-  //      pitem = new Puzzle();
- //       Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pitem"), pitem);
-  //      ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(pitem));
-  //      return pitem;
-  //  }
+    //      pitem = new Puzzle();
+    //       Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pitem"), pitem);
+    //      ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(pitem));
+    //      return pitem;
+    //  }
 
     //snacksociety
     public static @NotNull Chips createAndRegisterChips() {
@@ -243,42 +240,46 @@ public class NKBlocksAndItems {
         return chembombItem;
     }
     public static Chemblock createAndRegisterChemblock() {
-        Block.Settings chemblockSettings = Block.Settings.create().strength(16.0f);//.dropsLike(Block.getBlockFromItem(new MilkBucketItem(new Item.Settings())));
-        Chemblock chemblock = new Chemblock(chemblockSettings);
-        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "chemblock"), chemblock);
-        return chemblock;
+        Block.Settings ChemblockSettings = Block.Settings.create().strength(16.0f);
+        Chemblock Chemblock = new Chemblock(ChemblockSettings);
+        Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "chemblock"),Chemblock);
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemblock"), new BlockItem(Chemblock, new Item.Settings()));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(Chemblock));
+
+        return Chemblock;
     }
-    public static @NotNull BlockItem createAndRegisterChemBlockItem(Chemblock chemblockBlock){
-        ChemBlockitem ChemBlockitem = new ChemBlockitem(chemblockBlock, new Item.Settings());
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemblock"), ChemBlockitem);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register((itemGroup) -> {
-            itemGroup.add(ChemBlockitem.asItem());
-        });
-        return ChemBlockitem;
-    }
-    public static @NotNull Item createAndRegisterGChembombItem() {
-        Item.Settings itemSettings = new Item.Settings();
-        Item chembombItem = new Chembomb (itemSettings);
-        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "gchembomb"), chembombItem);
+
+
+    public static @NotNull Item createAndRegisterchemmedicineItem() {
+        Item chemmedicine = new chemmedicine();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemmedicine"),chemmedicine);
         // Add it to the group / toolbox
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(chembombItem));
-        return chembombItem;
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(chemmedicine));
+        return chemmedicine;
     }
+    public static proteinpowder createAndRegisterproteinpowder() {
+        proteinpowder kItem= new proteinpowder();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "proteinpowder"),kItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(kItem));
+        return kItem;
+    }
+
+
 
 
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // SHIVANK
-//    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(nutriknight, "item_group"));
-//    public static final ItemGroup FROZEN_WORLD = FabricItemGroup.builder();
-   public static @NotNull IceCream createAndRegisterIceCream() {
+    //    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(nutriknight, "item_group"));
+    //    public static final ItemGroup FROZEN_WORLD = FabricItemGroup.builder();
+    public static @NotNull IceCream createAndRegisterIceCream() {
         Block.Settings IceCreamSettings = Block.Settings.create().strength(16.0f);
-       IceCream IceCream = new IceCream(IceCreamSettings);
+        IceCream IceCream = new IceCream(IceCreamSettings);
         Registry.register(Registries.BLOCK, Identifier.of("nutriknight", "ice_cream"), IceCream);
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "ice_cream"), new BlockItem(IceCream, new Item.Settings()));
-       ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(IceCream));
-       return IceCream;
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((itemGroup) -> itemGroup.add(IceCream));
+        return IceCream;
     }
     public static @NotNull VolcanoCrust createAndRegisterVolcanoCrust(){
         Block.Settings VolcanoCrustSettings = Block.Settings.create().strength(20.0f);
@@ -413,7 +414,7 @@ public class NKBlocksAndItems {
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //    VIHAAN
+    //    VIHAAN
     public static Item cerealSword() {
         CerealSword sssItem = new CerealSword();
         final CerealSwordMaterial INSTANCE= new CerealSwordMaterial();
@@ -499,3 +500,4 @@ public class NKBlocksAndItems {
         return cerealBlock;
     }
 }
+
