@@ -251,7 +251,7 @@ public class NKBlocksAndItems {
 
 
     public static @NotNull Item createAndRegisterchemmedicineItem() {
-        Item chemmedicine = new chemmedicine();
+        ChemMedicine chemmedicine = new ChemMedicine();
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "chemmedicine"),chemmedicine);
         // Add it to the group / toolbox
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(chemmedicine));
