@@ -37,10 +37,6 @@ public class OatsItem extends Item {
         return new Item.Settings().food(oats);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("itemTooltip.nutriknight.bobatea").formatted(Formatting.GOLD));
-    }
 
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {

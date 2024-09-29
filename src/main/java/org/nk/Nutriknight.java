@@ -60,6 +60,7 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.ToxicBucket();
         NKBlocksAndItems.CerealBlock();
         NKBlocksAndItems.Pizza();
+        NKBlocksAndItems.EggsAndBacon();
         NKBlocksAndItems.createAndRegisterPear();
         NKBlocksAndItems.createAndRegisterStrawberry();
         NKBlocksAndItems.createAndRegisterCheese();
@@ -70,5 +71,10 @@ public class Nutriknight implements ModInitializer {
         NKBlocksAndItems.createAndRegisterChips();
         NKBlocksAndItems.createAndRegisterGum();
         NKBlocksAndItems.createAndRegisterCornsyrup();
+        NKBlocksAndItems.AirheadExtreme();
+        NKBlocksAndItems.Gatorade();
+        NKBlocksAndItems.Cheetos();
+        NKBlocksAndItems.FriedChicken();
+        NKBlocksAndItems.HotDog();
     }
 }

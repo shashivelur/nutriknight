@@ -37,6 +37,7 @@ import org.nk.frozenworld.VolcanoCrust;
 import org.nk.greensworld.Lettuce;
 import org.nk.greensworld.Spinach;
 import org.nk.greensworld.Tomato;
+import org.nk.snacksociety.Cheetos;
 import org.nk.snacksociety.Chips;
 import org.nk.snacksociety.Gum;
 import org.nk.greensworld.*;
@@ -438,6 +439,42 @@ public class NKBlocksAndItems {
         Registry.register(Registries.ITEM, Identifier.of("nutriknight", "pizza"), pizza);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(pizza));
         return pizza;
+    }
+    public static @NotNull Item EggsAndBacon() {
+        Item eggsandbacon = new EggsAndBacon();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "eggs_and_bacon"), eggsandbacon);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(eggsandbacon));
+        return eggsandbacon;
+    }
+    public static @NotNull Item AirheadExtreme() {
+        Item airheadExtreme = new AirheadExtreme();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "airhead_extreme"), airheadExtreme);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(airheadExtreme));
+        return airheadExtreme;
+    }
+    public static @NotNull Item Gatorade() {
+        Item gatorade = new Gatorade();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "gatorade"), gatorade);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(gatorade));
+        return gatorade;
+    }
+    public static @NotNull Item Cheetos() {
+        Item cheetos = new Cheetos();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "cheetos"), cheetos);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(cheetos));
+        return cheetos;
+    }
+    public static @NotNull Item FriedChicken() {
+        Item friedChicken = new FriedChicken();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "fried_chicken"), friedChicken);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(friedChicken));
+        return friedChicken;
+    }
+    public static @NotNull Item HotDog() {
+        Item hotDog = new HotDog();
+        Registry.register(Registries.ITEM, Identifier.of("nutriknight", "hot_dog"), hotDog);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(hotDog));
+        return hotDog;
     }
     public static @NotNull Item Roti() {
         Item roti = new Roti();
